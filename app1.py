@@ -74,11 +74,18 @@ if(len(res)!=0):
     for em in res:
         if em in dfem.values:
             flag = 0
+            break
         else:
             flag = 1
     if(flag==0):
         print("offensive")
         exit()
+    
+for k in x:
+    if(emoji.UNICODE_EMOJI.get(k)!=None):
+        x=x.replace(k,'')
+if(len(x)==0):
+    print("not offensive")
 else:
     for i in pck.predict([x]):
       if (i==1):
@@ -93,16 +100,4 @@ else:
         p = model.predict_classes(inp)
         for i in p:
           print(encoded_dict[i])
-"""
-df3 = get_text(x)
 
-tok = joblib.load('tokenizer_t.pkl')
-word = joblib.load('words.pkl')
-df3 = no_stop_inp(tokenizer,df3,'text')
-inp = inpenc(tok,df3,'text')
-
-p = model.predict_classes(inp)
-for i in p:
-    print(encoded_dict[i])
-
-"""
