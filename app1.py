@@ -7,6 +7,7 @@ import profanity_check as pck
 import string
 import re
 import json
+import emoji
 import nltk
 import sys
 #run on the first time alone :
