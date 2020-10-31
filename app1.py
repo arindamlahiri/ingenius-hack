@@ -11,7 +11,7 @@ import emoji
 import nltk
 import sys
 #run on the first time alone :
-#nltk.download('wordnet')
+nltk.download('wordnet')
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
