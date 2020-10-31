@@ -18,7 +18,7 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 import demoji
 demoji.download_codes()
 
-model = load_model('botmodel.h5')
+model = load_model('botmodel(0.5).h5')
 tok = joblib.load('tokenizer_t.pkl')
 words = joblib.load('words.pkl')
 dfem = pd.read_csv('emoji_dataset.csv')
