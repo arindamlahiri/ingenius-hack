@@ -31,7 +31,7 @@ client.on('message', async(message) => {
 
     process.stdout.on('close', async(code) => {
         output = output[output.length-1]
-        console.log(output)
+        console.log(JSON.stringify(output))
         if(output === 'offensive\r\n') {
             let user = await findUserById(id)
             if(!user) {
