@@ -4,7 +4,10 @@ const { Client } = require('discord.js')
 const client = new Client()
 const mongoClient = require('mongodb').MongoClient
 const { bot_token,db_url } = process.env
-let dbo
+let dbo,expectedOutput
+
+if(process.env.NODE_ENV === 'production') expectedOutput = 'offensive\n'
+else expectedOutput = 'offensive\r\n'
 
 client.once('ready', () => {
     console.log('Bot online!')
@@ -32,7 +35,7 @@ client.on('message', async(message) => {
     process.stdout.on('close', async(code) => {
         output = output[output.length-1]
         console.log(JSON.stringify(output))
-        if(output === 'offensive\r\n') {
+        if(output === expectedOutput) {
             let user = await findUserById(id)
             if(!user) {
                 let data = {
