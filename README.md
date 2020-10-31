@@ -1,4 +1,4 @@
-# ServerPolice - A Discord Bot
+# ServerPolice - An AI based Anti Cyber Bullying Discord Bot
 ## Team 41: Serial Hackers
 
 ###  BiLSTM Model :
